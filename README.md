@@ -1,6 +1,6 @@
-# PatchScope Implementation
+# PatchScope Implementation - Enhanced Version
 
-This project implements PatchScope as described in the paper, with a modular structure for easy experimentation and analysis.
+This project implements PatchScope as described in the paper, with a modular structure for easy experimentation and analysis, plus extensive logging and multiple experiment types.
 
 ## Structure
 
@@ -9,9 +9,40 @@ This project implements PatchScope as described in the paper, with a modular str
 - `patchscope_core.py` - Core PatchScope implementation
 - `analysis.py` - Result analysis and visualization
 - `experiment_runner.py` - Experiment orchestration
-- `main.py` - Main execution script
+- `logger.py` - **NEW**: Comprehensive logging system
+- `main.py` - Main execution script with enhanced CLI
+- `examples.py` - **NEW**: Usage examples and demonstrations
 
 ## Key Features
+
+### **Enhanced PatchScope Experiments**
+- **Multiple Template Types**: Test PatchScope with different prompt styles
+- **Few-Shot Prompting**: Leverage pattern recognition with example-based templates
+- **Template Comparison**: Compare performance across template types
+
+
+### **Comprehensive Logging System**
+All experiments automatically create detailed logs:
+- `experiment_history.log` - Real-time event log with timestamps
+- `detailed_results.json` - Complete structured results data  
+- `experiment_summary.txt` - Human-readable summary
+
+**Portable logging**: Uses relative paths, works in local/Colab/Kaggle environments.
+
+### **Multiple Template Types for PatchScope**
+```python
+# PatchScope Templates (mixed context)
+"Syria: Country in the Middle East. Leonardo DiCaprio: American actor. x:"
+
+# Few-Shot Templates (pattern learning)
+"Mozart: Composed The Magic Flute and Don Giovanni. Beethoven: Composed the Ninth Symphony and Moonlight Sonata. x:"
+
+# Contextual Templates (rich context)
+"Albert Einstein was a theoretical physicist. Marie Curie was a pioneering scientist. x:"
+
+# Minimal Templates (baseline)
+"The answer is x:"
+```
 
 ### Variable Layer Combinations
 - Extract from layer X, inject to layer Y (not just X→X)
@@ -49,20 +80,20 @@ python main.py --mode targeted --source-prompt "Albert Einstein"
 python main.py --mode sweep --source-prompt "Marie Curie" 
 ```
 
-### Comprehensive Study (all phases)
+### PatchScope with Template Types
 ```bash
-python main.py --mode comprehensive
+python main.py --mode patchscope --source-prompt "Albert Einstein" --template-type few_shot
 ```
 
-### Multi-Prompt Comparison
+### Multi-Template Comparison
 ```bash
-python main.py --mode multi
+python main.py --mode templates --source-prompt "Marie Curie"
 ```
 
 ## Configuration
 
-### Adding New Prompts
-Edit `config.py` to add new source prompts or target templates:
+### Adding New Template Types
+Edit `config.py` to add new template categories:
 
 ```python
 PROMPTS = {
@@ -70,9 +101,13 @@ PROMPTS = {
         "Your New Entity",  # Add here
         # ... existing prompts
     ],
-    "target_templates": [
-        "Your new template with x: marker",  # Add here
+    "patchscope_templates": [
+        "Your new PatchScope template with x: marker",  # Add here
         # ... existing templates  
+    ],
+    "few_shot_templates": [
+        "Example1: Description. Example2: Description. x:",  # Add here
+        # ... existing templates
     ],
     "analysis_keywords": {
         "Your New Entity": ["keyword1", "keyword2", "keyword3"]

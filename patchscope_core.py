@@ -83,20 +83,28 @@ class PatchScope:
             # Step 1: Extract source representation
             source_repr, source_token = self.extract_representation(source_prompt, extract_layer)
             
+            # Debug print for extraction
+            print(f"    📤 Extracted from layer {extract_layer}, last token: '{source_token}'")
+            
             # Step 2: Find patch position
             patch_position = self.find_patch_position(target_prompt)
             if patch_position is None:
+                print(f"    ❌ Could not find patch marker 'x' in target prompt")
                 return None
                 
+            print(f"    📍 Patch position found at token index: {patch_position}")
+            
             # Step 3: Prepare target inputs
             target_inputs = self.tokenizer(target_prompt, return_tensors="pt").to(self.model.device)
             
             # Step 4: Get target layer for injection
             layers = self.model_loader.get_layers()
             if inject_layer >= len(layers):
+                print(f"    ❌ Inject layer {inject_layer} >= total layers {len(layers)}")
                 return None
                 
             target_layer = layers[inject_layer]
+            print(f"    💉 Injecting into layer {inject_layer} ({type(target_layer).__name__})")
             
             # Step 5: Set up patching hook
             patch_applied = False
@@ -112,7 +120,10 @@ class PatchScope:
                 
                 # Apply patch if position is valid and not already applied
                 if (hidden_states.shape[1] > patch_position and not patch_applied):
+                    original_norm = torch.norm(hidden_states[0, patch_position, :]).item()
                     hidden_states[0, patch_position, :] = source_repr
+                    new_norm = torch.norm(hidden_states[0, patch_position, :]).item()
+                    print(f"    🔄 Patch applied! Norm change: {original_norm:.2f} → {new_norm:.2f}")
                     patch_applied = True
                 
                 # Return in original format
@@ -125,6 +136,7 @@ class PatchScope:
             hook_handle = target_layer.register_forward_hook(patching_hook)
             
             try:
+                print(f"    🎯 Generating with patch...")
                 with torch.no_grad():
                     generated_ids = self.model.generate(
                         target_inputs['input_ids'],
@@ -144,6 +156,8 @@ class PatchScope:
                 else:
                     new_text = ""
                 
+                print(f"    📝 Generated: '{new_text}' (patch_applied: {patch_applied})")
+                
                 return {
                     'extract_layer': extract_layer,
                     'inject_layer': inject_layer,
@@ -152,14 +166,16 @@ class PatchScope:
                     'new_tokens': new_text,
                     'source_token': source_token,
                     'source_prompt': source_prompt,
-                    'target_prompt': target_prompt
+                    'target_prompt': target_prompt,
+                    'patch_position': patch_position,
+                    'source_repr_norm': torch.norm(source_repr).item()
                 }
                 
             finally:
                 hook_handle.remove()
                 
         except Exception as e:
-            print(f"Error in single patch (extract: {extract_layer}, inject: {inject_layer}): {e}")
+            print(f"    ❌ Error in patch (E{extract_layer}→I{inject_layer}): {e}")
             return None
     
     def run_layer_range_experiment(self, source_prompt: str, target_prompt: str,
