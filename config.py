@@ -27,136 +27,133 @@ EXPERIMENT_CONFIG = {
 }
 
 # --- Prompts Configuration ---
-# Easy to edit prompts as guided by the paper
+# Enhanced prompts based on best practices for clarity, specificity, and structure.
 PROMPTS = {
+    # Suggestions: Diversified the list to include figures from different fields
+    # and with varying name structures. This helps in testing the model's
+    # robustness in entity recognition.
     "source_prompts": [
         "George Washington",
-        "Albert Einstein", 
+        "Albert Einstein",
         "Marie Curie",
         "Leonardo da Vinci",
-        "Cleopatra",
+        "Cleopatra VII",  # Added specificity
         "Aristotle",
-        "Shakespeare",
-        "Mozart",
+        "William Shakespeare",  # Used full name for consistency
+        "Wolfgang Amadeus Mozart", # Used full name
         "Napoleon Bonaparte",
         "Isaac Newton",
         "Charles Darwin",
-        "Vincent van Gogh"
+        "Vincent van Gogh",
+        "Ada Lovelace", # Added a prominent female figure in tech
+        "Martin Luther King Jr.", # Included a historical figure with a suffix
     ],
-    
-    # PatchScope templates with different styles and few-shot examples
+
+    # Suggestions: The original templates were good but mixed different contexts.
+    # These have been refined for clarity and to provide a clearer signal to the model.
+    # The use of "?:" is a good placeholder as noted in the paper.
     "patchscope_templates": [
-        # Template 1: Original PatchScope style (mixed context)
-        "Syria: Country in the Middle East. Leonardo DiCaprio: American actor. Samsung: South Korean multinational corporation. x:",
-        
-        # Template 2: Historical context style
-        "Julius Caesar: Roman emperor who crossed the Rubicon. Napoleon Bonaparte: French emperor who was exiled to Elba. x:",
-        
-        # Template 3: Scientific context style  
-        "Isaac Newton: Physicist who discovered gravity. Marie Curie: Chemist who discovered radium. x:",
-        
-        # Template 4: Geographic context style
-        "Paris: Capital of France. Tokyo: Capital of Japan. x:",
-        
-        # Template 5: Artistic context style
-        "Pablo Picasso: Spanish painter who created Guernica. Vincent van Gogh: Dutch painter who created Starry Night. x:",
+        # Template 1: More explicit instruction for description
+        "Provide a brief description of the following entity. Syria: A country in the Middle East. Leonardo DiCaprio: An American actor. Samsung: A South Korean multinational corporation. ?:",
+
+        # Template 2: Clearer historical context with a direct command
+        "Describe the historical significance of the person. Julius Caesar: A Roman general and statesman who played a critical role in the demise of the Roman Republic. Napoleon Bonaparte: A French military and political leader who rose to prominence during the French Revolution. ?:",
+
+        # Template 3: Focused scientific contribution
+        "Explain the main scientific contribution of the individual. Isaac Newton: Developed the laws of motion and universal gravitation. Marie Curie: Conducted pioneering research on radioactivity. ?:",
+
+        # Template 4: Simple and direct entity identification
+        "Identify the following entity. Paris: The capital city of France. Tokyo: The capital city of Japan. ?:",
+
+        # Template 5: Artistic context with a focus on their work
+        "Describe the artist and their notable work. Pablo Picasso: A Spanish painter who co-founded the Cubist movement and created 'Guernica'. Vincent van Gogh: A Dutch Post-Impressionist painter who created 'The Starry Night'. ?:",
     ],
-    
-    # Few-shot prompting templates with clear patterns
+
+    # Suggestions: The few-shot templates are already quite strong. The edits below
+    # focus on making the pattern even more explicit and consistent.
     "few_shot_templates": [
-        # Template 1: Definition pattern (2-shot)
-        "Albert Einstein: German physicist known for relativity theory. Charles Darwin: English naturalist known for evolution theory. x:",
-        
-        # Template 2: Achievement pattern (2-shot)
-        "Mozart: Composed The Magic Flute and Don Giovanni. Beethoven: Composed the Ninth Symphony and Moonlight Sonata. x:",
-        
-        # Template 3: Historical role pattern (2-shot)
-        "Cleopatra: Last pharaoh of ancient Egypt. Alexander the Great: Macedonian king who conquered the Persian Empire. x:",
-        
-        # Template 4: Invention/Discovery pattern (2-shot)
-        "Thomas Edison: Invented the light bulb and phonograph. Alexander Graham Bell: Invented the telephone and audiometer. x:",
-        
-        # Template 5: Literary pattern (2-shot)
-        "Shakespeare: Wrote Romeo and Juliet and Hamlet. Mark Twain: Wrote The Adventures of Tom Sawyer and Huckleberry Finn. x:",
-        
-        # Template 6: Scientific field pattern (3-shot)
-        "Marie Curie: Pioneered radioactivity research. Isaac Newton: Developed laws of motion and gravity. Galileo: Advanced astronomy with telescopic observations. x:",
-        
-        # Template 7: Artistic style pattern (2-shot)
-        "Pablo Picasso: Spanish painter who pioneered Cubism. Vincent van Gogh: Dutch post-impressionist known for bold colors. x:"
+        # Template 1: Clearer 'Person: Description' pattern
+        "Albert Einstein: A German-born theoretical physicist who developed the theory of relativity. Charles Darwin: An English naturalist, geologist, and biologist, best known for his contributions to the science of evolution. ?:",
+
+        # Template 2: Consistent 'Composer: Notable Works' pattern
+        "Wolfgang Amadeus Mozart: Composer of 'The Magic Flute' and 'Don Giovanni'. Ludwig van Beethoven: Composer of the 'Ninth Symphony' and 'Moonlight Sonata'. ?:",
+
+        # Template 3: Consistent 'Historical Figure: Role' pattern
+        "Cleopatra: The last active ruler of the Ptolemaic Kingdom of Egypt. Alexander the Great: A king of the ancient Greek kingdom of Macedon. ?:",
+
+        # Template 4: Consistent 'Inventor: Inventions' pattern
+        "Thomas Edison: Inventor of the practical electric light bulb and the phonograph. Alexander Graham Bell: Inventor of the telephone. ?:",
+
+        # Template 5: Consistent 'Author: Major Works' pattern
+        "William Shakespeare: Author of 'Romeo and Juliet' and 'Hamlet'. Mark Twain: Author of 'The Adventures of Tom Sawyer' and 'Adventures of Huckleberry Finn'. ?:",
     ],
-    
-    # Context-free templates (minimal context for baseline comparison)
+
+    # Suggestions: Minimal context prompts are for baseline testing and should be simple.
+    # The original prompts are good. Added a couple more variations.
     "minimal_context_templates": [
-        "The answer is x:",
-        "x:",
-        "Complete: x:",
-        "Name: x:",
-        "Entity: x:",
-        "Describe x:",
-        "What is x:"
+        "The answer is ?:",
+        "?:",
+        "Complete: ?:",
+        "Name: ?:",
+        "Entity: ?:",
+        "Describe ?:",
+        "What is ?:",
+        "Information about ?:", # Added variation
+        "Here is information on ?:", # Added variation
     ],
-    
+
+    # Suggestions: Target templates from the paper are designed to extract specific information.
+    # The revised templates are more direct and ask for a specific piece of information.
     "target_templates": [
-        # Template 1: Mixed context with clear marker (original PatchScope)
-        "Syria: Country in the Middle East. Leonardo DiCaprio: American actor. Samsung: South Korean multinational corporation. x:",
-        
-        # Template 2: Simple context
-        "The capital of France is Paris. The inventor of the telephone was Alexander Graham Bell. x:",
-        
-        # Template 3: Scientific context  
-        "Water boils at 100°C. The speed of light is 299,792,458 m/s. x:",
-        
-        # Template 4: Historical context
-        "World War II ended in 1945. The Roman Empire fell in 476 AD. x:",
-        
-        # Template 5: Geographic context
-        "Mount Everest is the tallest mountain. The Pacific is the largest ocean. x:",
-        
-        # Template 6: Knowledge completion (as in paper)
-        "Complete the following factual statement: x:",
-        
-        # Template 7: Entity description
-        "Describe the following entity: x:",
-        
-        # Template 8: Direct completion
-        "x:"
+        # Template 1: Direct instruction for entity description.
+        "Describe the following entity in one sentence: ?:",
+
+        # Template 2: More specific knowledge completion.
+        "Complete the following fact. ?:",
+
+        # Template 3: Clearer role-playing prompt.
+        "You are a helpful assistant. Provide a summary of the entity ?:",
+
+        # Template 4: Structured output request.
+        "Provide the following information for ?: \n- Field: \n- Main Achievement:",
+
+        # Template 5: Simple and direct completion.
+        "? is known for",
     ],
-    
-    # Contextual prompting templates (rich context for better results)
+
+    # Suggestions: Contextual templates should provide rich, relevant context to guide the model.
+    # The revised templates offer more descriptive context.
     "contextual_templates": [
-        # Template 1: Professional context
-        "Albert Einstein was a theoretical physicist. Marie Curie was a pioneering scientist. x:",
-        
-        # Template 2: Temporal context
-        "The Renaissance occurred in the 14th-17th centuries. The Industrial Revolution occurred in the 18th-19th centuries. x:",
-        
-        # Template 3: Geographic context
-        "Rome is the capital of Italy. Berlin is the capital of Germany. x:",
-        
-        # Template 4: Achievement context
-        "Leonardo da Vinci painted the Mona Lisa. Michelangelo sculpted David. x:",
-        
-        # Template 5: Category context
-        "Dogs are domesticated mammals. Cats are independent pets. x:"
+        # Template 1: Richer professional context.
+        "In the context of influential scientists who revolutionized our understanding of the universe, consider the following. Albert Einstein was a theoretical physicist who developed the theory of relativity. Marie Curie was a physicist and chemist who conducted pioneering research on radioactivity. Now, describe ?:",
+
+        # Template 2: More descriptive temporal context.
+        "During the Renaissance, a period of great cultural change and artistic development in Europe, Leonardo da Vinci was a painter, architect, and inventor. In the same era, Michelangelo was a sculptor, painter, and architect. In this context, who was ?:",
+
+        # Template 3: More specific geographic context.
+        "In the history of major European capitals, Rome is the capital of Italy and is known for its ancient Roman ruins. Berlin is the capital of Germany, known for its vibrant arts scene and historical significance. In this context, what is ?:",
+
+        # Template 4: Detailed achievement context.
+        "Within the realm of great artistic achievements, Leonardo da Vinci painted the 'Mona Lisa', one of the world's most famous portraits. Michelangelo sculpted 'David', a masterpiece of High Renaissance sculpture. Following this pattern of artists and their masterpieces, describe ?:",
     ],
-    
-    
+
     "analysis_keywords": {
-        "George Washington": ["president", "first", "united states", "america", "washington", "founding father"],
-        "Albert Einstein": ["physicist", "relativity", "scientist", "german", "theory"],
-        "Marie Curie": ["physicist", "chemist", "nobel", "radioactivity", "scientist"],
-        "Leonardo da Vinci": ["artist", "inventor", "renaissance", "mona lisa", "painter"],
-        "Cleopatra": ["queen", "egypt", "pharaoh", "ancient", "egyptian"],
-        "Aristotle": ["philosopher", "ancient", "greek", "logic", "ethics"],
-        "Shakespeare": ["playwright", "english", "writer", "hamlet", "poet"],
-        "Mozart": ["composer", "classical", "music", "austrian", "symphony"],
-        "Napoleon Bonaparte": ["emperor", "french", "military", "conquest", "waterloo"],
-        "Isaac Newton": ["physicist", "gravity", "laws", "mathematics", "scientist"],
-        "Charles Darwin": ["evolution", "naturalist", "species", "origin", "scientist"],
-        "Vincent van Gogh": ["painter", "dutch", "post-impressionist", "sunflowers", "artist"]
+        "George Washington": ["president", "first", "united states", "america", "washington", "founding father", "general"],
+        "Albert Einstein": ["physicist", "relativity", "scientist", "german", "e=mc^2", "theory of relativity"],
+        "Marie Curie": ["physicist", "chemist", "nobel prize", "radioactivity", "scientist", "polish", "french"],
+        "Leonardo da Vinci": ["artist", "inventor", "renaissance", "mona lisa", "painter", "italian"],
+        "Cleopatra VII": ["queen", "egypt", "pharaoh", "ptolemaic", "egyptian", "ruler"],
+        "Aristotle": ["philosopher", "ancient", "greek", "logic", "ethics", "student of plato"],
+        "William Shakespeare": ["playwright", "english", "writer", "hamlet", "poet", "bard"],
+        "Wolfgang Amadeus Mozart": ["composer", "classical", "music", "austrian", "symphony", "opera"],
+        "Napoleon Bonaparte": ["emperor", "french", "military", "leader", "waterloo"],
+        "Isaac Newton": ["physicist", "gravity", "laws of motion", "mathematics", "scientist", "english"],
+        "Charles Darwin": ["evolution", "naturalist", "on the origin of species", "biologist", "scientist"],
+        "Vincent van Gogh": ["painter", "dutch", "post-impressionist", "starry night", "artist"],
+        "Ada Lovelace": ["mathematician", "writer", "charles babbage", "analytical engine", "programmer"],
+        "Martin Luther King Jr.": ["civil rights", "leader", "activist", "i have a dream", "minister"],
     },
-    
+
     # Template categories for different experiment types
     "template_categories": {
         "patchscope": "patchscope_templates",
