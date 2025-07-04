@@ -7,7 +7,7 @@ import torch
 
 # --- Model Configuration ---
 MODEL_CONFIG = {
-    "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+    "model_id": "meta-llama/Llama-3.2-3B",
     "device_map": "auto",
     "torch_dtype": torch.bfloat16,
     # Using torch native quantization instead of bitsandbytes

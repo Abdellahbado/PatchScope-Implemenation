@@ -42,13 +42,13 @@ class PatchScope:
         
         return representation, last_token
     
-    def find_patch_position(self, target_prompt: str, marker: str = 'x') -> Optional[int]:
+    def find_patch_position(self, target_prompt: str, marker: str = '?') -> Optional[int]:
         """
         Find the position of the patch marker in the target prompt.
         
         Args:
             target_prompt: Target prompt containing the marker
-            marker: Marker to look for (default: 'x')
+            marker: Marker to look for (default: '?')
             
         Returns:
             Position index or None if not found
