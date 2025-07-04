@@ -55,12 +55,14 @@ class PatchScope:
         """
         inputs = self.tokenizer(target_prompt, return_tensors="pt").to(self.model.device)
         tokens = self.tokenizer.convert_ids_to_tokens(inputs['input_ids'][0])
-        
+        print(f"\n    [DEBUG] Finding marker '{marker}' in tokens: {tokens}")
+
         # Look for the marker token
         for i, token in enumerate(tokens):
             # Handle different tokenization formats
-            if (token.lower().strip() == marker.lower() or 
-                token in (marker, f' {marker}', f'Ġ{marker}', f'▁{marker}')):
+            clean_token = token.lower().strip()
+            if (clean_token == marker.lower() or 
+                clean_token.startswith(marker.lower())):
                 return i
                 
         return None
