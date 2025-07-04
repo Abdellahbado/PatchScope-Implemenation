@@ -59,9 +59,11 @@ class PatchScope:
 
         # Look for the marker token
         for i, token in enumerate(tokens):
-            # Handle different tokenization formats
-            clean_token = token.lower().strip()
-            if (clean_token == marker.lower() or 
+            # Handle different tokenization formats (e.g., '?', ' ?', '?:', 'Ġ?:')
+            # The 'Ġ' character (U+0120) represents a space and is not removed by strip().
+            clean_token = token.lstrip('Ġ ').lower()
+
+            if (clean_token == marker.lower() or
                 clean_token.startswith(marker.lower())):
                 return i
                 
