@@ -17,16 +17,23 @@ class PatchScopeAnalyzer:
     def analyze_results(self, results: List[Dict[str, Any]], source_prompt: str) -> Dict[str, Any]:
         """
         Analyze experiment results to find knowledge patterns.
-        
-        Args:
-            results: List of experiment results
-            source_prompt: Source prompt used in experiments
-            
-        Returns:
-            Analysis summary
         """
         if not results:
-            return {"error": "No results to analyze"}
+            return {
+                "error": "No results to analyze",
+                "summary": {  # ADD THIS DEFAULT SUMMARY
+                    "total_experiments": 0,
+                    "successful_patches": 0,
+                    "strong_match_count": 0,
+                    "partial_match_count": 0,
+                    "weak_match_count": 0,
+                    "expected_keywords": []
+                },
+                "strong_matches": [],
+                "partial_matches": [],
+                "weak_matches": [],
+                "failed_patches": []
+            }
             
         # Get expected keywords for this source
         expected_keywords = PROMPTS["analysis_keywords"].get(

@@ -48,7 +48,7 @@ class PatchScope:
         
         Args:
             target_prompt: Target prompt containing the marker
-            marker: Marker to look for (default: '?')
+            marker: Marker to look for (default: '?')  # CHANGE THIS FROM 'x' TO '?'
             
         Returns:
             Position index or None if not found
@@ -69,15 +69,6 @@ class PatchScope:
                         extract_layer: int, inject_layer: int) -> Optional[Dict[str, Any]]:
         """
         Run a single PatchScope experiment.
-        
-        Args:
-            source_prompt: Prompt to extract representation from
-            target_prompt: Prompt to inject representation into
-            extract_layer: Layer to extract from
-            inject_layer: Layer to inject into
-            
-        Returns:
-            Dictionary with experiment results or None if failed
         """
         try:
             # Step 1: Extract source representation
@@ -87,9 +78,9 @@ class PatchScope:
             print(f"    📤 Extracted from layer {extract_layer}, last token: '{source_token}'")
             
             # Step 2: Find patch position
-            patch_position = self.find_patch_position(target_prompt)
+            patch_position = self.find_patch_position(target_prompt)  # This will now default to '?'
             if patch_position is None:
-                print(f"    ❌ Could not find patch marker 'x' in target prompt")
+                print(f"    ❌ Could not find patch marker '?' in target prompt")  # UPDATE ERROR MESSAGE
                 return None
                 
             print(f"    📍 Patch position found at token index: {patch_position}")
