@@ -3,29 +3,31 @@ Main execution script for PatchScope experiments.
 This is the entry point for running various PatchScope studies.
 """
 
-import sys
+# Update the main.py file
+
 import argparse
+import sys
 import time
 from typing import Optional
 
 from model_loader import ModelLoader
 from patchscope_core import PatchScope
 from experiment_runner import ExperimentRunner
-from config import PROMPTS
+from config import PROMPTS, MODEL_REGISTRY
 
-
-def setup_experiment() -> tuple:
+def setup_experiment(model_name: str = None) -> tuple:
     """Initialize model, tokenizer, and experiment components."""
     print("🚀 PATCHSCOPE EXPERIMENT SETUP")
     print("=" * 40)
     
-    # Load model and tokenizer
-    model_loader = ModelLoader()
+    # Load model and tokenizer with specified model
+    model_loader = ModelLoader(model_name)
     model, tokenizer = model_loader.load_model_and_tokenizer()
     
     # Display model info
     model_info = model_loader.get_model_info()
     print(f"\nModel Info:")
+    print(f"  Model ID: {model_loader.model_name or 'default'}")
     print(f"  Structure: {model_info.get('structure_type', 'Unknown')}")
     print(f"  Total layers: {model_info.get('total_layers', 'Unknown')}")
     print(f"  Device: {model_info.get('device', 'Unknown')}")
@@ -40,6 +42,7 @@ def setup_experiment() -> tuple:
     logger.log_model_info(model_info)
     
     return model_loader, patchscope, runner
+
 
 
 def run_quick_test():
@@ -230,13 +233,24 @@ def run_multi_prompt_study():
     print("=" * 40)
     runner.analyzer.compare_prompts(results_by_prompt)
 
-
 def main():
     """Main entry point with command line interface."""
     parser = argparse.ArgumentParser(
         description="PatchScope Experiments - Advanced Interpretability Analysis",
         formatter_class=argparse.RawTextHelpFormatter
     )
+    
+    # Add model selection argument
+    parser.add_argument(
+        "--model", 
+        choices=list(MODEL_REGISTRY.keys()),
+        default=None,
+        help=(
+            "Model to use for experiments:\n" +
+            "\n".join([f"  {name}: {config['model_id']}" for name, config in MODEL_REGISTRY.items()])
+        )
+    )
+    
     parser.add_argument(
         "--mode", 
         choices=["quick", "targeted", "sweep", "comprehensive", "multi", "patchscope", "templates"],
@@ -252,11 +266,13 @@ def main():
             "  templates:     PatchScope across multiple template types"
         )
     )
+    
     parser.add_argument(
         "--source-prompt",
         type=str,
         help="Source prompt to use (default varies by mode)"
     )
+    
     parser.add_argument(
         "--template-type",
         choices=["patchscope", "few_shot", "minimal", "contextual", "standard"],
@@ -268,34 +284,33 @@ def main():
     
     try:
         print(f"🎯 Starting PatchScope experiment: {args.mode.upper()}")
+        if args.model:
+            print(f"🤖 Using model: {args.model} ({MODEL_REGISTRY[args.model]['model_id']})")
+        else:
+            print(f"🤖 Using default model")
         print(f"⏰ Timestamp: {time.strftime('%Y-%m-%d %H:%M:%S')}")
         
         if args.mode == "quick":
-            run_quick_test()
+            run_quick_test(args.model)
         elif args.mode == "targeted":
-            run_targeted_study(args.source_prompt)
+            run_targeted_study(args.source_prompt, args.model)
         elif args.mode == "sweep":
-            run_sweep_study(args.source_prompt)
+            run_sweep_study(args.source_prompt, args.model)
         elif args.mode == "comprehensive":
-            run_comprehensive_study()
+            run_comprehensive_study(args.model)
         elif args.mode == "multi":
-            run_multi_prompt_study()
+            run_multi_prompt_study(args.model)
         elif args.mode == "patchscope":
-            run_patchscope_study(args.source_prompt, args.template_type)
+            run_patchscope_study(args.source_prompt, args.template_type, args.model)
         elif args.mode == "templates":
-            run_multi_template_study(args.source_prompt)
-        
-        print(f"\n🎉 Experiment completed successfully!")
-        print(f"📁 Check the generated log files for detailed results.")
+            run_multi_template_study(args.source_prompt, args.model)
         
     except KeyboardInterrupt:
-        print("\n\n⚠️  Experiment interrupted by user.")
-        print("Partial results may have been saved to log files.")
+        print("\n⚠️  Experiment interrupted by user")
     except Exception as e:
-        print(f"\n❌ Error during experiment: {e}")
-        import traceback
-        traceback.print_exc()
-        print("\n💡 Check your model installation and GPU availability.")
+        print(f"\n❌ Experiment failed: {e}")
+        sys.exit(1)
+
 
 
 if __name__ == "__main__":

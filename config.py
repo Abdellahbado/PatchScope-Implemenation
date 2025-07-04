@@ -6,16 +6,37 @@ Contains all configurable parameters and prompts.
 import torch
 
 # --- Model Configuration ---
-MODEL_CONFIG = {
-    "model_id": "meta-llama/Llama-3.2-3B",
-    "device_map": "auto",
-    "torch_dtype": torch.bfloat16,
-    # Using torch native quantization instead of bitsandbytes
-    "quantization": {
-        "enable": True,
-        "dtype": torch.int8  # Using torch.quantization instead of bitsandbytes
+# Add this to config.py after the existing MODEL_CONFIG
+
+# --- Model Registry ---
+MODEL_REGISTRY = {
+    "llama-3.2-3b-inst": {
+        "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+        "device_map": "auto",
+        "torch_dtype": torch.bfloat16,
+        "quantization": {"enable": True, "dtype": torch.int8}
+    },
+    "llama-3.2-3b": {
+        "model_id": "meta-llama/Llama-3.2-3B",
+        "device_map": "auto",
+        "torch_dtype": torch.bfloat16,
+        "quantization": {"enable": True, "dtype": torch.int8}
     }
 }
+
+# Default model (keep existing behavior)
+DEFAULT_MODEL = "llama-3.2-3b"
+
+def get_model_config(model_name: str = None) -> dict:
+    """Get model configuration by name."""
+    if model_name is None:
+        model_name = DEFAULT_MODEL
+    
+    if model_name not in MODEL_REGISTRY:
+        available_models = list(MODEL_REGISTRY.keys())
+        raise ValueError(f"Model '{model_name}' not found. Available models: {available_models}")
+    
+    return MODEL_REGISTRY[model_name]
 
 # --- Experiment Configuration ---
 EXPERIMENT_CONFIG = {

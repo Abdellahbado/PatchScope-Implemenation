@@ -7,30 +7,45 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from typing import Tuple, Optional
 
-from config import MODEL_CONFIG
+# Update the ModelLoader class in model_loader.py
 
+from config import MODEL_CONFIG, get_model_config
 
 class ModelLoader:
     """Handles loading and configuring the model and tokenizer."""
     
-    def __init__(self):
+    def __init__(self, model_name: str = None):
         self.model = None
         self.tokenizer = None
         self.device = None
+        self.model_name = model_name
         
-    def load_model_and_tokenizer(self, model_id: Optional[str] = None) -> Tuple[AutoModelForCausalLM, AutoTokenizer]:
+    def load_model_and_tokenizer(self, model_id: Optional[str] = None, 
+                                model_name: Optional[str] = None) -> Tuple[AutoModelForCausalLM, AutoTokenizer]:
         """
         Load model and tokenizer with optional quantization.
         
         Args:
-            model_id: Model identifier. If None, uses default from config.
+            model_id: Direct model identifier (takes precedence)
+            model_name: Model name from registry (e.g., "llama-3.2-3b")
             
         Returns:
             Tuple of (model, tokenizer)
         """
-        if model_id is None:
-            model_id = MODEL_CONFIG["model_id"]
-            
+        # Priority: direct model_id > model_name > instance model_name > default
+        if model_id:
+            model_config = {
+                "model_id": model_id,
+                "device_map": "auto",
+                "torch_dtype": torch.bfloat16,
+                "quantization": {"enable": True, "dtype": torch.int8}
+            }
+        else:
+            # Use model_name parameter or instance model_name
+            selected_model_name = model_name or self.model_name
+            model_config = get_model_config(selected_model_name)
+        
+        model_id = model_config["model_id"]
         print(f"Loading model: {model_id}")
         
         # Load tokenizer
@@ -40,15 +55,13 @@ class ModelLoader:
         
         # Prepare model loading arguments
         model_kwargs = {
-            "device_map": MODEL_CONFIG["device_map"],
-            "torch_dtype": MODEL_CONFIG["torch_dtype"],
+            "device_map": model_config["device_map"],
+            "torch_dtype": model_config["torch_dtype"],
         }
         
-        # Add quantization if enabled (using torch native instead of bitsandbytes)
-        if MODEL_CONFIG["quantization"]["enable"]:
+        # Add quantization if enabled
+        if model_config["quantization"]["enable"]:
             print("Using torch native quantization...")
-            # Note: For production use, you might want to use torch.quantization
-            # For now, we'll load normally and optionally quantize later
             pass
         
         print("Loading model...")
@@ -61,7 +74,6 @@ class ModelLoader:
         
         print("Model and tokenizer loaded successfully.")
         return model, tokenizer
-    
     def get_model_info(self) -> dict:
         """Get information about the loaded model structure."""
         if self.model is None:
