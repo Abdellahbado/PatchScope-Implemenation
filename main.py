@@ -45,13 +45,13 @@ def setup_experiment(model_name: str = None) -> tuple:
 
 
 
-def run_quick_test():
+def run_quick_test(model_name: str = None):
     """Run a quick test to verify everything is working."""
     print("\n🧪 QUICK FUNCTIONALITY TEST")
     print("=" * 30)
-    
-    model_loader, patchscope, runner = setup_experiment()
-    
+
+    model_loader, patchscope, runner = setup_experiment(model_name)
+
     # Initialize logger for quick test
     from logger import ExperimentLogger
     logger = ExperimentLogger("quick_test")
@@ -95,9 +95,9 @@ def run_quick_test():
     print("Quick test complete!")
 
 
-def run_patchscope_study(source_prompt: Optional[str] = None, template_type: str = "patchscope"):
+def run_patchscope_study(source_prompt: Optional[str] = None, template_type: str = "patchscope", model_name: str = None):
     """Run PatchScope experiments with different template types."""
-    model_loader, patchscope, runner = setup_experiment()
+    model_loader, patchscope, runner = setup_experiment(model_name)
     
     if source_prompt is None:
         source_prompt = "George Washington"
@@ -125,9 +125,9 @@ def run_patchscope_study(source_prompt: Optional[str] = None, template_type: str
         })
 
 
-def run_multi_template_study(source_prompt: Optional[str] = None):
+def run_multi_template_study(source_prompt: Optional[str] = None, model_name: str = None):
     """Run PatchScope experiments across multiple template types."""
-    model_loader, patchscope, runner = setup_experiment()
+    model_loader, patchscope, runner = setup_experiment(model_name)
     
     if source_prompt is None:
         source_prompt = "Albert Einstein"
@@ -149,9 +149,9 @@ def run_multi_template_study(source_prompt: Optional[str] = None):
         runner.logger.save_session()
 
 
-def run_targeted_study(source_prompt: Optional[str] = None):
+def run_targeted_study(source_prompt: Optional[str] = None, model_name: str = None):
     """Run a targeted study on specific prompts."""
-    model_loader, patchscope, runner = setup_experiment()
+    model_loader, patchscope, runner = setup_experiment(model_name)
     
     if source_prompt is None:
         source_prompt = "George Washington"
@@ -182,9 +182,9 @@ def run_targeted_study(source_prompt: Optional[str] = None):
         runner.logger.save_session()
 
 
-def run_sweep_study(source_prompt: Optional[str] = None):
+def run_sweep_study(source_prompt: Optional[str] = None, model_name: str = None):
     """Run a comprehensive sweep study."""
-    model_loader, patchscope, runner = setup_experiment()
+    model_loader, patchscope, runner = setup_experiment(model_name)
     
     if source_prompt is None:
         source_prompt = "George Washington"
@@ -215,15 +215,15 @@ def run_sweep_study(source_prompt: Optional[str] = None):
         runner.logger.save_session()
 
 
-def run_comprehensive_study():
+def run_comprehensive_study(model_name: str = None):
     """Run the full comprehensive study."""
-    model_loader, patchscope, runner = setup_experiment()
+    model_loader, patchscope, runner = setup_experiment(model_name)
     runner.run_comprehensive_study()
 
 
-def run_multi_prompt_study():
+def run_multi_prompt_study(model_name: str = None):
     """Run multi-prompt comparison study."""
-    model_loader, patchscope, runner = setup_experiment()
+    model_loader, patchscope, runner = setup_experiment(model_name)
     
     # Run multi-prompt experiment
     results_by_prompt = runner.run_multi_prompt_experiment(num_prompts=4)
