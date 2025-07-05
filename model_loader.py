@@ -3,13 +3,17 @@ Model loading and initialization utilities.
 Handles model and tokenizer setup with optional quantization.
 """
 
+"""
+Model loading and initialization utilities.
+Handles model and tokenizer setup with optional quantization.
+"""
+
 import torch
+from typing import Optional, Tuple
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from typing import Tuple, Optional
 
-# Update the ModelLoader class in model_loader.py
-
-from config import MODEL_CONFIG, get_model_config
+# Fix the import - remove MODEL_CONFIG, keep get_model_config
+from config import get_model_config, MODEL_REGISTRY, DEFAULT_MODEL
 
 class ModelLoader:
     """Handles loading and configuring the model and tokenizer."""
@@ -18,7 +22,7 @@ class ModelLoader:
         self.model = None
         self.tokenizer = None
         self.device = None
-        self.model_name = model_name
+        self.model_name = model_name or DEFAULT_MODEL
         
     def load_model_and_tokenizer(self, model_id: Optional[str] = None, 
                                 model_name: Optional[str] = None) -> Tuple[AutoModelForCausalLM, AutoTokenizer]:
@@ -32,7 +36,7 @@ class ModelLoader:
         Returns:
             Tuple of (model, tokenizer)
         """
-        # Priority: direct model_id > model_name > instance model_name > default
+        # Priority: direct model_id > model_name parameter > instance model_name > default
         if model_id:
             model_config = {
                 "model_id": model_id,
@@ -62,6 +66,7 @@ class ModelLoader:
         # Add quantization if enabled
         if model_config["quantization"]["enable"]:
             print("Using torch native quantization...")
+            # Note: Actual quantization implementation would go here
             pass
         
         print("Loading model...")
@@ -74,33 +79,30 @@ class ModelLoader:
         
         print("Model and tokenizer loaded successfully.")
         return model, tokenizer
+    
     def get_model_info(self) -> dict:
-        """Get information about the loaded model structure."""
+        """Get information about the loaded model."""
         if self.model is None:
             return {"error": "No model loaded"}
-            
-        try:
-            # Determine model structure and layer count
-            if hasattr(self.model, 'model') and hasattr(self.model.model, 'layers'):
-                layers = self.model.model.layers
-                structure_type = "model.model.layers"
-            elif hasattr(self.model, 'transformer') and hasattr(self.model.transformer, 'h'):
-                layers = self.model.transformer.h
-                structure_type = "model.transformer.h"
-            else:
-                return {"error": "Unknown model structure"}
-                
-            return {
-                "structure_type": structure_type,
-                "total_layers": len(layers),
-                "layer_type": type(layers[0]).__name__,
-                "device": str(self.device),
-                "dtype": str(self.model.dtype)
-            }
-            
-        except Exception as e:
-            return {"error": f"Error analyzing model: {e}"}
-    
+        
+        # Detect model structure
+        if hasattr(self.model, 'model') and hasattr(self.model.model, 'layers'):
+            structure_type = "model.model.layers"
+            total_layers = len(self.model.model.layers)
+        elif hasattr(self.model, 'transformer') and hasattr(self.model.transformer, 'h'):
+            structure_type = "transformer.h"
+            total_layers = len(self.model.transformer.h)
+        else:
+            structure_type = "unknown"
+            total_layers = 0
+        
+        return {
+            "structure_type": structure_type,
+            "total_layers": total_layers,
+            "device": str(self.device),
+            "model_name": self.model_name,
+            "dtype": str(self.model.dtype) if hasattr(self.model, 'dtype') else "unknown"
+        }   
     def get_layers(self):
         """Get the model layers for patching."""
         if self.model is None:
