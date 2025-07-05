@@ -1,0 +1,1394 @@
+[2025-07-05T00:25:06.087089] EXPERIMENT_START: Starting setup
+[2025-07-05T00:25:06.087258] MODEL_LOADED: Model: {'structure_type': 'model.model.layers', 'total_layers': 28, 'device': 'cuda:0', 'model_name': 'llama-3.2-3b-inst', 'dtype': 'torch.bfloat16'}
+[2025-07-05T00:25:06.087531] EXPERIMENT_START: Starting targeted_George_Washington
+[2025-07-05T00:25:06.087617] EXPERIMENT_PHASE_START: TARGETED experiment started
+    Data: {
+  "experiment_type": "TARGETED",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "layer_subset": "targeted",
+  "test_layers": [
+    2,
+    7,
+    14,
+    21,
+    26
+  ]
+}
+[2025-07-05T00:25:08.269711] PATCH_SUCCESS: E2→I2: s wife, Martha, was a strong-willed and independent woman who played
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s wife, Martha, was a strong-willed and independent woman who played",
+  "new_tokens": "s wife, Martha, was a strong-willed and independent woman who played",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 4.6875
+}
+[2025-07-05T00:25:09.416893] PATCH_SUCCESS: E2→I7: s
+The entity is a collection of people who are part of a particular
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is a collection of people who are part of a particular",
+  "new_tokens": "s\nThe entity is a collection of people who are part of a particular",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 4.6875
+}
+[2025-07-05T00:25:10.617372] PATCH_SUCCESS: E2→I14: the 2019 film directed by Taika Waititi, is a
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:, the 2019 film directed by Taika Waititi, is a",
+  "new_tokens": "the 2019 film directed by Taika Waititi, is a",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 4.6875
+}
+[2025-07-05T00:25:11.658403] PATCH_SUCCESS: E2→I21: The entity is a fictional character from the popular video game series "Final
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:\nThe entity is a fictional character from the popular video game series \"Final",
+  "new_tokens": "The entity is a fictional character from the popular video game series \"Final",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 4.6875
+}
+[2025-07-05T00:25:12.625624] PATCH_SUCCESS: E2→I26: the entity is a fictional character from the novel "The Picture of Dorian
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?: the entity is a fictional character from the novel \"The Picture of Dorian",
+  "new_tokens": "the entity is a fictional character from the novel \"The Picture of Dorian",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 4.6875
+}
+[2025-07-05T00:25:13.572223] PATCH_SUCCESS: E7→I2: s legacy is a complex mix of contradictions, reflecting both the ideals of the
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s legacy is a complex mix of contradictions, reflecting both the ideals of the",
+  "new_tokens": "s legacy is a complex mix of contradictions, reflecting both the ideals of the",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 10.0625
+}
+[2025-07-05T00:25:14.507912] PATCH_SUCCESS: E7→I7: s
+The entity is a group of people who are the descendants of the
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is a group of people who are the descendants of the",
+  "new_tokens": "s\nThe entity is a group of people who are the descendants of the",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 10.0625
+}
+[2025-07-05T00:25:15.431465] PATCH_SUCCESS: E7→I14: s
+The term "soul" is a concept that has been debated
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe term \"soul\" is a concept that has been debated",
+  "new_tokens": "s\nThe term \"soul\" is a concept that has been debated",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 10.0625
+}
+[2025-07-05T00:25:16.367557] PATCH_SUCCESS: E7→I21: s
+The entity is a plural noun referring to a person or a group
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is a plural noun referring to a person or a group",
+  "new_tokens": "s\nThe entity is a plural noun referring to a person or a group",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 10.0625
+}
+[2025-07-05T00:25:17.348146] PATCH_SUCCESS: E7→I26: American singer-songwriter and musician, known for his eclectic and experimental style,
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?: American singer-songwriter and musician, known for his eclectic and experimental style,",
+  "new_tokens": "American singer-songwriter and musician, known for his eclectic and experimental style,",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 10.0625
+}
+[2025-07-05T00:25:18.298623] PATCH_SUCCESS: E14→I2: s Mount Vernon estate, located in Virginia, was the primary residence of the
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s Mount Vernon estate, located in Virginia, was the primary residence of the",
+  "new_tokens": "s Mount Vernon estate, located in Virginia, was the primary residence of the",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 13.75
+}
+[2025-07-05T00:25:19.323258] PATCH_SUCCESS: E14→I7: s
+The entity is a plural noun referring to the first president of the
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is a plural noun referring to the first president of the",
+  "new_tokens": "s\nThe entity is a plural noun referring to the first president of the",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 13.75
+}
+[2025-07-05T00:25:20.355039] PATCH_SUCCESS: E14→I14: s
+The entity is a plural noun referring to the first letter of the
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is a plural noun referring to the first letter of the",
+  "new_tokens": "s\nThe entity is a plural noun referring to the first letter of the",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 13.75
+}
+[2025-07-05T00:25:21.280246] PATCH_SUCCESS: E14→I21: s
+The entity is a plural noun referring to a person or a group
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is a plural noun referring to a person or a group",
+  "new_tokens": "s\nThe entity is a plural noun referring to a person or a group",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 13.75
+}
+[2025-07-05T00:25:22.194972] PATCH_SUCCESS: E14→I26: Williamson, John (1771-1847) was a British politician and
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?: Williamson, John (1771-1847) was a British politician and",
+  "new_tokens": "Williamson, John (1771-1847) was a British politician and",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 13.75
+}
+[2025-07-05T00:25:23.099092] PATCH_SUCCESS: E21→I2: s statue in the National Mall in Washington D.C.
+The statue depicts George
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s statue in the National Mall in Washington D.C.\nThe statue depicts George",
+  "new_tokens": "s statue in the National Mall in Washington D.C.\nThe statue depicts George",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 22.125
+}
+[2025-07-05T00:25:24.021773] PATCH_SUCCESS: E21→I7: s
+The entity is a plural noun referring to the first letter of the
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is a plural noun referring to the first letter of the",
+  "new_tokens": "s\nThe entity is a plural noun referring to the first letter of the",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 22.125
+}
+[2025-07-05T00:25:25.004337] PATCH_SUCCESS: E21→I14: s
+The term "one's" is a possessive pronoun used
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe term \"one's\" is a possessive pronoun used",
+  "new_tokens": "s\nThe term \"one's\" is a possessive pronoun used",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 22.125
+}
+[2025-07-05T00:25:25.985242] PATCH_SUCCESS: E21→I21: s
+The entity is a plural noun referring to a person or a group
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is a plural noun referring to a person or a group",
+  "new_tokens": "s\nThe entity is a plural noun referring to a person or a group",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 22.125
+}
+[2025-07-05T00:25:26.923295] PATCH_SUCCESS: E21→I26: s
+The entity is a plural noun referring to a person or a group
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is a plural noun referring to a person or a group",
+  "new_tokens": "s\nThe entity is a plural noun referring to a person or a group",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 22.125
+}
+[2025-07-05T00:25:27.842329] PATCH_SUCCESS: E26→I2: s
+The entity is a 3D model of a human head,
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is a 3D model of a human head,",
+  "new_tokens": "s\nThe entity is a 3D model of a human head,",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 33.25
+}
+[2025-07-05T00:25:28.759077] PATCH_SUCCESS: E26→I7: s
+The entity is: "The United States of America"
+The United
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is: \"The United States of America\"\nThe United",
+  "new_tokens": "s\nThe entity is: \"The United States of America\"\nThe United",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 33.25
+}
+[2025-07-05T00:25:29.690443] PATCH_SUCCESS: E26→I14: s
+The term "one's" is a possessive pronoun that
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe term \"one's\" is a possessive pronoun that",
+  "new_tokens": "s\nThe term \"one's\" is a possessive pronoun that",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 33.25
+}
+[2025-07-05T00:25:30.649387] PATCH_SUCCESS: E26→I21: s
+The entity is a plural noun referring to a person or a group
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is a plural noun referring to a person or a group",
+  "new_tokens": "s\nThe entity is a plural noun referring to a person or a group",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 33.25
+}
+[2025-07-05T00:25:31.567772] PATCH_SUCCESS: E26→I26: s
+The entity is a plural noun referring to a person or a group
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Describe the following entity in one sentence:?:'s\nThe entity is a plural noun referring to a person or a group",
+  "new_tokens": "s\nThe entity is a plural noun referring to a person or a group",
+  "source_token": " Washington",
+  "source_prompt": "George Washington",
+  "target_prompt": "Describe the following entity in one sentence: ?:",
+  "patch_position": 9,
+  "source_repr_norm": 33.25
+}
+[2025-07-05T00:25:59.076663] EXPERIMENT_PHASE_START: TARGETED experiment started
+    Data: {
+  "experiment_type": "TARGETED",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "layer_subset": "targeted",
+  "test_layers": [
+    2,
+    7,
+    14,
+    21,
+    26
+  ]
+}
+[2025-07-05T00:25:59.989711] PATCH_SUCCESS: E2→I2: s law of universal gravitation states that every point mass attracts every other point
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s law of universal gravitation states that every point mass attracts every other point",
+  "new_tokens": "s law of universal gravitation states that every point mass attracts every other point",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.59375
+}
+[2025-07-05T00:26:00.905592] PATCH_SUCCESS: E2→I7: s law of universal gravitation states that every point mass attracts every other point
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s law of universal gravitation states that every point mass attracts every other point",
+  "new_tokens": "s law of universal gravitation states that every point mass attracts every other point",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.59375
+}
+[2025-07-05T00:26:01.820498] PATCH_SUCCESS: E2→I14: 1/2 = 0.5
+The fact is:
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: 1/2 = 0.5\nThe fact is: ",
+  "new_tokens": "1/2 = 0.5\nThe fact is:",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.59375
+}
+[2025-07-05T00:26:02.728740] PATCH_SUCCESS: E2→I21: which is the name of the new restaurant that has opened in the downtown
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:, which is the name of the new restaurant that has opened in the downtown",
+  "new_tokens": "which is the name of the new restaurant that has opened in the downtown",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.59375
+}
+[2025-07-05T00:26:03.649629] PATCH_SUCCESS: E2→I26: Family members of the deceased are entitled to a certain amount of money from the
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: Family members of the deceased are entitled to a certain amount of money from the",
+  "new_tokens": "Family members of the deceased are entitled to a certain amount of money from the",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.59375
+}
+[2025-07-05T00:26:04.552170] PATCH_SUCCESS: E7→I2: s work on calculus was influenced by the work of the following mathematician:
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s work on calculus was influenced by the work of the following mathematician:\n",
+  "new_tokens": "s work on calculus was influenced by the work of the following mathematician:",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 10.1875
+}
+[2025-07-05T00:26:05.453545] PATCH_SUCCESS: E7→I7: s work on calculus was not widely recognized until the 18th century,
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s work on calculus was not widely recognized until the 18th century,",
+  "new_tokens": "s work on calculus was not widely recognized until the 18th century,",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 10.1875
+}
+[2025-07-05T00:26:06.379697] PATCH_SUCCESS: E7→I14: s work on the subject of the American Revolution is considered to be one of
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s work on the subject of the American Revolution is considered to be one of",
+  "new_tokens": "s work on the subject of the American Revolution is considered to be one of",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 10.1875
+}
+[2025-07-05T00:26:07.304392] PATCH_SUCCESS: E7→I21: s first name is a palindrome.
+The first name is a palindrome, and
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s first name is a palindrome.\nThe first name is a palindrome, and",
+  "new_tokens": "s first name is a palindrome.\nThe first name is a palindrome, and",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 10.1875
+}
+[2025-07-05T00:26:08.213172] PATCH_SUCCESS: E7→I26: List the three main types of rocks that are formed from the cooling and solid
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: List the three main types of rocks that are formed from the cooling and solid",
+  "new_tokens": "List the three main types of rocks that are formed from the cooling and solid",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 10.1875
+}
+[2025-07-05T00:26:09.120353] PATCH_SUCCESS: E14→I2: s law of universal gravitation states that every point mass attracts every other point
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s law of universal gravitation states that every point mass attracts every other point",
+  "new_tokens": "s law of universal gravitation states that every point mass attracts every other point",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 13.6875
+}
+[2025-07-05T00:26:10.034484] PATCH_SUCCESS: E14→I7: s work on the behavior of fluids and gases led to the development of the
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s work on the behavior of fluids and gases led to the development of the",
+  "new_tokens": "s work on the behavior of fluids and gases led to the development of the",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 13.6875
+}
+[2025-07-05T00:26:10.955329] PATCH_SUCCESS: E14→I14: s work on the subject of the origin of the universe is considered to be
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s work on the subject of the origin of the universe is considered to be",
+  "new_tokens": "s work on the subject of the origin of the universe is considered to be",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 13.6875
+}
+[2025-07-05T00:26:11.863340] PATCH_SUCCESS: E14→I21: s first name is a palindrome.
+The first name is a palindrome, and
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s first name is a palindrome.\nThe first name is a palindrome, and",
+  "new_tokens": "s first name is a palindrome.\nThe first name is a palindrome, and",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 13.6875
+}
+[2025-07-05T00:26:12.769223] PATCH_SUCCESS: E14→I26: Newton's second law of motion states that the acceleration of an object is directly
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: Newton's second law of motion states that the acceleration of an object is directly",
+  "new_tokens": "Newton's second law of motion states that the acceleration of an object is directly",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 13.6875
+}
+[2025-07-05T00:26:13.674242] PATCH_SUCCESS: E21→I2: s law of universal gravitation states that every point mass attracts every other point
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s law of universal gravitation states that every point mass attracts every other point",
+  "new_tokens": "s law of universal gravitation states that every point mass attracts every other point",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 22.125
+}
+[2025-07-05T00:26:14.619239] PATCH_SUCCESS: E21→I7: s work on the behavior of fluids in motion was a major contribution to the
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s work on the behavior of fluids in motion was a major contribution to the",
+  "new_tokens": "s work on the behavior of fluids in motion was a major contribution to the",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 22.125
+}
+[2025-07-05T00:26:15.538696] PATCH_SUCCESS: E21→I14: (1) The sum of the interior angles of a triangle is always
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: (1) The sum of the interior angles of a triangle is always ",
+  "new_tokens": "(1) The sum of the interior angles of a triangle is always",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 22.125
+}
+[2025-07-05T00:26:16.443559] PATCH_SUCCESS: E21→I21: s first name is a palindrome.
+The first name is a palindrome, and
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s first name is a palindrome.\nThe first name is a palindrome, and",
+  "new_tokens": "s first name is a palindrome.\nThe first name is a palindrome, and",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 22.125
+}
+[2025-07-05T00:26:17.376834] PATCH_SUCCESS: E21→I26: Newton's method for finding the roots of a function f(x) is based
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: Newton's method for finding the roots of a function f(x) is based",
+  "new_tokens": "Newton's method for finding the roots of a function f(x) is based",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 22.125
+}
+[2025-07-05T00:26:18.275488] PATCH_SUCCESS: E26→I2: s work on the subject of calculus was a major breakthrough in the development of
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s work on the subject of calculus was a major breakthrough in the development of",
+  "new_tokens": "s work on the subject of calculus was a major breakthrough in the development of",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 34.75
+}
+[2025-07-05T00:26:19.179886] PATCH_SUCCESS: E26→I7: s work on the subject of optics and light was groundbreaking because it challenged the
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s work on the subject of optics and light was groundbreaking because it challenged the",
+  "new_tokens": "s work on the subject of optics and light was groundbreaking because it challenged the",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 34.75
+}
+[2025-07-05T00:26:20.104009] PATCH_SUCCESS: E26→I14: s work on the subject of the American Revolution is considered a classic in the
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s work on the subject of the American Revolution is considered a classic in the",
+  "new_tokens": "s work on the subject of the American Revolution is considered a classic in the",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 34.75
+}
+[2025-07-05T00:26:21.008169] PATCH_SUCCESS: E26→I21: s father was a famous painter.
+**Answer:** Leonardo da Vinci's father
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s father was a famous painter.\n**Answer:** Leonardo da Vinci's father",
+  "new_tokens": "s father was a famous painter.\n**Answer:** Leonardo da Vinci's father",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 34.75
+}
+[2025-07-05T00:26:21.917614] PATCH_SUCCESS: E26→I26: s first name is spelled with a "y" in the middle.
+?
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s first name is spelled with a \"y\" in the middle.\n?",
+  "new_tokens": "s first name is spelled with a \"y\" in the middle.\n?",
+  "source_token": " Newton",
+  "source_prompt": "Isaac Newton",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 34.75
+}
+[2025-07-05T00:26:21.917993] EXPERIMENT_PHASE_START: TARGETED experiment started
+    Data: {
+  "experiment_type": "TARGETED",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "layer_subset": "targeted",
+  "test_layers": [
+    2,
+    7,
+    14,
+    21,
+    26
+  ]
+}
+[2025-07-05T00:26:22.827597] PATCH_SUCCESS: E2→I2: s famous painting, the Mona Lisa, is a portrait of a woman who
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s famous painting, the Mona Lisa, is a portrait of a woman who",
+  "new_tokens": "s famous painting, the Mona Lisa, is a portrait of a woman who",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.53125
+}
+[2025-07-05T00:26:23.751031] PATCH_SUCCESS: E2→I7: was a renowned artist who was known for his innovative use of color and his
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: was a renowned artist who was known for his innovative use of color and his",
+  "new_tokens": "was a renowned artist who was known for his innovative use of color and his",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.53125
+}
+[2025-07-05T00:26:24.666082] PATCH_SUCCESS: E2→I14: The number of ways to choose a team of 5 players from a
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:\nThe number of ways to choose a team of 5 players from a",
+  "new_tokens": "The number of ways to choose a team of 5 players from a",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.53125
+}
+[2025-07-05T00:26:25.573341] PATCH_SUCCESS: E2→I21: Smith, J., dissenting, said that the court should not have granted
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: Smith, J., dissenting, said that the court should not have granted",
+  "new_tokens": "Smith, J., dissenting, said that the court should not have granted",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.53125
+}
+[2025-07-05T00:26:26.494567] PATCH_SUCCESS: E2→I26: orms of the word "bank" are used to describe the slope of a
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:forms of the word \"bank\" are used to describe the slope of a",
+  "new_tokens": "orms of the word \"bank\" are used to describe the slope of a",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.53125
+}
+[2025-07-05T00:26:27.430511] PATCH_SUCCESS: E7→I2: s famous drawing, the Vitruvian Man, is a representation of
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s famous drawing, the Vitruvian Man, is a representation of",
+  "new_tokens": "s famous drawing, the Vitruvian Man, is a representation of",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 11.0
+}
+[2025-07-05T00:26:28.341736] PATCH_SUCCESS: E7→I7: s famous painting, the Mona Lisa, is a portrait of a woman who
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s famous painting, the Mona Lisa, is a portrait of a woman who",
+  "new_tokens": "s famous painting, the Mona Lisa, is a portrait of a woman who",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 11.0
+}
+[2025-07-05T00:26:29.253552] PATCH_SUCCESS: E7→I14: s work on the subject of the human body is considered to be one of
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s work on the subject of the human body is considered to be one of",
+  "new_tokens": "s work on the subject of the human body is considered to be one of",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 11.0
+}
+[2025-07-05T00:26:30.166062] PATCH_SUCCESS: E7→I21: (a) 1.5, (b) 2.
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:, (a) 1.5, (b) 2.",
+  "new_tokens": "(a) 1.5, (b) 2.",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 11.0
+}
+[2025-07-05T00:26:31.078216] PATCH_SUCCESS: E7→I26: The number of ways to choose a subset of 3 elements from a
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:. The number of ways to choose a subset of 3 elements from a",
+  "new_tokens": "The number of ways to choose a subset of 3 elements from a",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 11.0
+}
+[2025-07-05T00:26:31.994714] PATCH_SUCCESS: E14→I2: s famous drawing of a human skeleton is called the _______________________.
+
+## Step
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s famous drawing of a human skeleton is called the _______________________.\n\n## Step",
+  "new_tokens": "s famous drawing of a human skeleton is called the _______________________.\n\n## Step",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 13.8125
+}
+[2025-07-05T00:26:32.881794] PATCH_SUCCESS: E14→I7: s famous painting, the Mona Lisa, is a portrait of a woman who
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s famous painting, the Mona Lisa, is a portrait of a woman who",
+  "new_tokens": "s famous painting, the Mona Lisa, is a portrait of a woman who",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 13.8125
+}
+[2025-07-05T00:26:33.777305] PATCH_SUCCESS: E14→I14: s work on the subject of the Renaissance humanist, Pico della Mir
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s work on the subject of the Renaissance humanist, Pico della Mir",
+  "new_tokens": "s work on the subject of the Renaissance humanist, Pico della Mir",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 13.8125
+}
+[2025-07-05T00:26:34.679981] PATCH_SUCCESS: E14→I21: 1. The number of ways to choose 3 items from a
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:, 1. The number of ways to choose 3 items from a",
+  "new_tokens": "1. The number of ways to choose 3 items from a",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 13.8125
+}
+[2025-07-05T00:26:35.593222] PATCH_SUCCESS: E14→I26: The number of ways to choose a subset of 3 elements from a
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:. The number of ways to choose a subset of 3 elements from a",
+  "new_tokens": "The number of ways to choose a subset of 3 elements from a",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 13.8125
+}
+[2025-07-05T00:26:36.498751] PATCH_SUCCESS: E21→I2: s famous drawing, the Vitruvian Man, is a representation of
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s famous drawing, the Vitruvian Man, is a representation of",
+  "new_tokens": "s famous drawing, the Vitruvian Man, is a representation of",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 22.0
+}
+[2025-07-05T00:26:37.428347] PATCH_SUCCESS: E21→I7: s famous painting, the Mona Lisa, is a portrait of a woman who
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s famous painting, the Mona Lisa, is a portrait of a woman who",
+  "new_tokens": "s famous painting, the Mona Lisa, is a portrait of a woman who",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 22.0
+}
+[2025-07-05T00:26:38.349646] PATCH_SUCCESS: E21→I14: s (or its) name is derived from the Latin word for "un
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s (or its) name is derived from the Latin word for \"un",
+  "new_tokens": "s (or its) name is derived from the Latin word for \"un",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 22.0
+}
+[2025-07-05T00:26:39.294121] PATCH_SUCCESS: E21→I21: s father was a famous artist.
+The answer is: Leonardo da Vinci's
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s father was a famous artist.\nThe answer is: Leonardo da Vinci's",
+  "new_tokens": "s father was a famous artist.\nThe answer is: Leonardo da Vinci's",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 22.0
+}
+[2025-07-05T00:26:40.248054] PATCH_SUCCESS: E21→I26: was the first person to be executed by lethal injection in the United States.
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: was the first person to be executed by lethal injection in the United States.\n",
+  "new_tokens": "was the first person to be executed by lethal injection in the United States.",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 22.0
+}
+[2025-07-05T00:26:41.184026] PATCH_SUCCESS: E26→I2: s painting, "The Creation of Adam," is a famous example of a
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s painting, \"The Creation of Adam,\" is a famous example of a",
+  "new_tokens": "s painting, \"The Creation of Adam,\" is a famous example of a",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 35.75
+}
+[2025-07-05T00:26:42.110661] PATCH_SUCCESS: E26→I7: s painting, "The Last Supper," is a famous mural that depicts
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s painting, \"The Last Supper,\" is a famous mural that depicts",
+  "new_tokens": "s painting, \"The Last Supper,\" is a famous mural that depicts",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 35.75
+}
+[2025-07-05T00:26:43.054194] PATCH_SUCCESS: E26→I14: s (1) is a subset of (2).
+The answer is:
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s (1) is a subset of (2).\nThe answer is:",
+  "new_tokens": "s (1) is a subset of (2).\nThe answer is:",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 35.75
+}
+[2025-07-05T00:26:43.978010] PATCH_SUCCESS: E26→I21: The number of ways to choose a subset of 3 elements from a
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:: The number of ways to choose a subset of 3 elements from a",
+  "new_tokens": "The number of ways to choose a subset of 3 elements from a",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 35.75
+}
+[2025-07-05T00:26:44.908288] PATCH_SUCCESS: E26→I26: s first name is spelled with a "y" in the middle.
+?
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s first name is spelled with a \"y\" in the middle.\n?",
+  "new_tokens": "s first name is spelled with a \"y\" in the middle.\n?",
+  "source_token": " Vinci",
+  "source_prompt": "Leonardo da Vinci",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 35.75
+}
+[2025-07-05T00:26:44.908628] EXPERIMENT_PHASE_START: TARGETED experiment started
+    Data: {
+  "experiment_type": "TARGETED",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "layer_subset": "targeted",
+  "test_layers": [
+    2,
+    7,
+    14,
+    21,
+    26
+  ]
+}
+[2025-07-05T00:26:45.838236] PATCH_SUCCESS: E2→I2: s voyage on the Beagle was a major turning point in his life,
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s voyage on the Beagle was a major turning point in his life,",
+  "new_tokens": "s voyage on the Beagle was a major turning point in his life,",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.90625
+}
+[2025-07-05T00:26:46.794253] PATCH_SUCCESS: E2→I7: s theory of evolution by natural selection is a fundamental concept in the field of
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s theory of evolution by natural selection is a fundamental concept in the field of",
+  "new_tokens": "s theory of evolution by natural selection is a fundamental concept in the field of",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.90625
+}
+[2025-07-05T00:26:47.717089] PATCH_SUCCESS: E2→I14: 1.5, 2.5, 3.5
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:, 1.5, 2.5, 3.5",
+  "new_tokens": "1.5, 2.5, 3.5",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.90625
+}
+[2025-07-05T00:26:48.623259] PATCH_SUCCESS: E2→I21: on the surface of the Earth, the average temperature is about 15 degrees
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: on the surface of the Earth, the average temperature is about 15 degrees",
+  "new_tokens": "on the surface of the Earth, the average temperature is about 15 degrees",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.90625
+}
+[2025-07-05T00:26:49.532009] PATCH_SUCCESS: E2→I26: Darwin's finches on the Galapagos Islands are an example of a
+    Data: {
+  "extract_layer": 2,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: Darwin's finches on the Galapagos Islands are an example of a",
+  "new_tokens": "Darwin's finches on the Galapagos Islands are an example of a",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 4.90625
+}
+[2025-07-05T00:26:50.475483] PATCH_SUCCESS: E7→I2: s voyage on the HMS Beagle was a major turning point in the development
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s voyage on the HMS Beagle was a major turning point in the development",
+  "new_tokens": "s voyage on the HMS Beagle was a major turning point in the development",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 10.4375
+}
+[2025-07-05T00:26:51.379625] PATCH_SUCCESS: E7→I7: s voyage on the Beagle was a crucial part of his development as a
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s voyage on the Beagle was a crucial part of his development as a",
+  "new_tokens": "s voyage on the Beagle was a crucial part of his development as a",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 10.4375
+}
+[2025-07-05T00:26:52.286603] PATCH_SUCCESS: E7→I14: s theory of evolution by natural selection is a fundamental concept in biology.
+**
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s theory of evolution by natural selection is a fundamental concept in biology.\n**",
+  "new_tokens": "s theory of evolution by natural selection is a fundamental concept in biology.\n**",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 10.4375
+}
+[2025-07-05T00:26:53.203497] PATCH_SUCCESS: E7→I21: 1. The number of ways to choose 3 items from a
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:, 1. The number of ways to choose 3 items from a",
+  "new_tokens": "1. The number of ways to choose 3 items from a",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 10.4375
+}
+[2025-07-05T00:26:54.124307] PATCH_SUCCESS: E7→I26: Darwin's finches on the Galapagos Islands are an example of a
+    Data: {
+  "extract_layer": 7,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: Darwin's finches on the Galapagos Islands are an example of a",
+  "new_tokens": "Darwin's finches on the Galapagos Islands are an example of a",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 10.4375
+}
+[2025-07-05T00:26:55.074137] PATCH_SUCCESS: E14→I2: s theory of evolution by natural selection was first published in the year:
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s theory of evolution by natural selection was first published in the year: ",
+  "new_tokens": "s theory of evolution by natural selection was first published in the year:",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 14.0625
+}
+[2025-07-05T00:26:56.020992] PATCH_SUCCESS: E14→I7: s voyage on the Beagle was a pivotal moment in the development of his
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s voyage on the Beagle was a pivotal moment in the development of his",
+  "new_tokens": "s voyage on the Beagle was a pivotal moment in the development of his",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 14.0625
+}
+[2025-07-05T00:26:56.951069] PATCH_SUCCESS: E14→I14: s theory of evolution by natural selection is a fundamental concept in the field of
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s theory of evolution by natural selection is a fundamental concept in the field of",
+  "new_tokens": "s theory of evolution by natural selection is a fundamental concept in the field of",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 14.0625
+}
+[2025-07-05T00:26:57.872142] PATCH_SUCCESS: E14→I21: s first name is spelled with a "y" in the middle.
+The
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s first name is spelled with a \"y\" in the middle.\nThe",
+  "new_tokens": "s first name is spelled with a \"y\" in the middle.\nThe",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 14.0625
+}
+[2025-07-05T00:26:58.808619] PATCH_SUCCESS: E14→I26: Darwin Darwin was a British naturalist who is best known for his theory of
+    Data: {
+  "extract_layer": 14,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: Darwin Darwin was a British naturalist who is best known for his theory of",
+  "new_tokens": "Darwin Darwin was a British naturalist who is best known for his theory of",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 14.0625
+}
+[2025-07-05T00:26:59.729478] PATCH_SUCCESS: E21→I2: s theory of evolution by natural selection was first published in the year:
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s theory of evolution by natural selection was first published in the year: ",
+  "new_tokens": "s theory of evolution by natural selection was first published in the year:",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 23.375
+}
+[2025-07-05T00:27:00.685885] PATCH_SUCCESS: E21→I7: s theory of evolution by natural selection is a fundamental concept in the field of
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s theory of evolution by natural selection is a fundamental concept in the field of",
+  "new_tokens": "s theory of evolution by natural selection is a fundamental concept in the field of",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 23.375
+}
+[2025-07-05T00:27:01.614335] PATCH_SUCCESS: E21→I14: s theory of evolution by natural selection is a fundamental concept in the field of
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s theory of evolution by natural selection is a fundamental concept in the field of",
+  "new_tokens": "s theory of evolution by natural selection is a fundamental concept in the field of",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 23.375
+}
+[2025-07-05T00:27:02.527364] PATCH_SUCCESS: E21→I21: s father was a famous musician.
+The answer is: Mozart's father was
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s father was a famous musician.\nThe answer is: Mozart's father was",
+  "new_tokens": "s father was a famous musician.\nThe answer is: Mozart's father was",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 23.375
+}
+[2025-07-05T00:27:03.441866] PATCH_SUCCESS: E21→I26: Darwin's finches on the Galapagos Islands are an example of a
+    Data: {
+  "extract_layer": 21,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?: Darwin's finches on the Galapagos Islands are an example of a",
+  "new_tokens": "Darwin's finches on the Galapagos Islands are an example of a",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 23.375
+}
+[2025-07-05T00:27:04.358090] PATCH_SUCCESS: E26→I2: s theory of evolution by natural selection was first published in the year.
+##
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 2,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s theory of evolution by natural selection was first published in the year.\n##",
+  "new_tokens": "s theory of evolution by natural selection was first published in the year.\n##",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 34.5
+}
+[2025-07-05T00:27:05.290771] PATCH_SUCCESS: E26→I7: s theory of evolution by natural selection is a fundamental concept in the field of
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 7,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s theory of evolution by natural selection is a fundamental concept in the field of",
+  "new_tokens": "s theory of evolution by natural selection is a fundamental concept in the field of",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 34.5
+}
+[2025-07-05T00:27:06.223392] PATCH_SUCCESS: E26→I14: s theory of evolution by natural selection is a fundamental concept in the field of
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 14,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s theory of evolution by natural selection is a fundamental concept in the field of",
+  "new_tokens": "s theory of evolution by natural selection is a fundamental concept in the field of",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 34.5
+}
+[2025-07-05T00:27:07.150657] PATCH_SUCCESS: E26→I21: s father was a famous artist.
+The answer is: **Michelangelo
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 21,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s father was a famous artist.\nThe answer is: **Michelangelo",
+  "new_tokens": "s father was a famous artist.\nThe answer is: **Michelangelo",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 34.5
+}
+[2025-07-05T00:27:08.091420] PATCH_SUCCESS: E26→I26: s first name is spelled with a "y" in the middle.
+?
+    Data: {
+  "extract_layer": 26,
+  "inject_layer": 26,
+  "patch_applied": true,
+  "generated_text": "Complete the following fact.?:'s first name is spelled with a \"y\" in the middle.\n?",
+  "new_tokens": "s first name is spelled with a \"y\" in the middle.\n?",
+  "source_token": " Darwin",
+  "source_prompt": "Charles Darwin",
+  "target_prompt": "Complete the following fact. ?:",
+  "patch_position": 6,
+  "source_repr_norm": 34.5
+}
